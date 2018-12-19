@@ -1,0 +1,24 @@
+{
+  "name": "testapi",
+  "version": "0.0.1",
+  "description": "a hello world api",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "npx ts-node src/app.ts",
+    "lint": "npx tslint --project ./ 'src/**/*.ts?(x)' $@"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^6.2.0",
+    "fastify": "^1.13.2",
+    "ts-node": "^7.0.1"
+  },
+  "devDependencies": {
+    "@types/node": "^10.12.15",
+    "tslint": "^5.12.0",
+    "typescript": "^3.2.2"
+  }
+}

@@ -1,0 +1,14 @@
+#!/bin/sh
+
+REGISTRY="${DOCKER_LOCAL_REGISTRY}"
+IMAGE="node:10"
+FULL="${REGISTRY}${IMAGE}"
+
+WORKDIR="/app"
+docker run \
+	-it \
+	-p "8080:80" \
+	--rm \
+	-w "${WORKDIR}" \
+	-v "$(pwd):${WORKDIR}" \
+	"${FULL}" "$@"
