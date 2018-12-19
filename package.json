@@ -5,10 +5,10 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "npx ts-node src/app.ts",
+    "dev": "npx ts-node-dev --respawn src/app.ts",
     "lint": "npx tslint --project ./ 'src/**/*.ts?(x)' $@",
-	"pretty": "npx prettier --write 'src/**/*.ts'",
-	"precommit": "npm run pretty --silent && npm run lint --silent --fix"
+    "pretty": "npx prettier --write 'src/**/*.ts'",
+    "precommit": "npm run pretty --silent && npm run lint --silent --fix"
   },
   "author": "",
   "license": "ISC",
@@ -21,6 +21,7 @@
   "devDependencies": {
     "@types/node": "^10.12.15",
     "prettier": "^1.15.3",
+    "ts-node-dev": "^1.0.0-pre.32",
     "tslint": "^5.12.0",
     "typescript": "^3.2.2"
   }
