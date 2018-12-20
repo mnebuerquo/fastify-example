@@ -25,9 +25,9 @@ server.get('/', {
 
 server.post('/sum', {
   schema: {
-    //description: 'post some data',
-    //tags: ['user', 'code'],
-    //summary: 'qwerty',
+    description: 'post some data',
+    tags: ['user', 'code'],
+    summary: 'qwerty',
     params: {},
     body: {
       type: 'object',
