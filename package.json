@@ -4,11 +4,11 @@
   "description": "a hello world api",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest",
     "dev": "npx ts-node-dev --respawn src/app.ts",
     "lint": "npx tslint --project ./ 'src/**/*.ts?(x)' $@",
     "pretty": "npx prettier --write 'src/**/*.ts'",
-    "precommit": "npm run pretty --silent && npm run lint --silent --fix"
+    "precommit": "npm run pretty --silent && npm run lint --silent --fix && npm test --silent"
   },
   "author": "",
   "license": "ISC",
@@ -19,8 +19,11 @@
     "ts-node": "^7.0.1"
   },
   "devDependencies": {
+    "@types/jest": "^23.3.10",
     "@types/node": "^10.12.15",
+    "jest": "^23.6.0",
     "prettier": "^1.15.3",
+    "ts-jest": "^23.10.5",
     "ts-node-dev": "^1.0.0-pre.32",
     "tslint": "^5.12.0",
     "typescript": "^3.2.2"
