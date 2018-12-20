@@ -16,6 +16,7 @@
     "cors": "^2.8.5",
     "dotenv": "^6.2.0",
     "fastify": "^1.13.2",
+    "fastify-swagger": "^0.16.2",
     "ts-node": "^7.0.1"
   },
   "devDependencies": {

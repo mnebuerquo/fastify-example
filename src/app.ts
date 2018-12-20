@@ -4,9 +4,52 @@ const server = fastify({
   logger: true
 })
 
+import addSwagger from './swagger'
+addSwagger(server)
+
 // Declare a route
-server.get('/', function (request, reply) {
+server.get('/', {
+  schema: {
+    response: {
+      200: {
+        type: 'object',
+        properties: {
+          hello: { type: 'string' }
+        }
+      }
+    }
+  }
+}, function (request, reply) {
   reply.send({ hello: 'world' })
+})
+
+server.post('/sum', {
+  schema: {
+    //description: 'post some data',
+    //tags: ['user', 'code'],
+    //summary: 'qwerty',
+    params: {},
+    body: {
+      type: 'object',
+      properties: {
+        a: { type: 'number' },
+        b: { type: 'number' }
+      }
+    },
+    response: {
+      201: {
+        description: 'Succesful response',
+        type: 'object',
+        properties: {
+          answer: { type: 'number' }
+        }
+      }
+    }
+  }
+}, (request, reply) => {
+  console.log(request.body)
+  const {a, b} = request.body
+  reply.send({ answer: a+b })
 })
 
 // Run the server!
