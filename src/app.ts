@@ -1,5 +1,6 @@
 // Require the framework and instantiate it
 import * as fastify from 'fastify'
+
 const server = fastify({
   logger: true
 })
@@ -9,7 +10,10 @@ addSwagger(server)
 
 // Declare a route
 server.get('/', {
-  schema: {
+  schema: <fastify.RouteSchema>{
+    description: 'default route with hello world',
+    tags: ['user', 'code'],
+    summary: 'replace this with your own code',
     response: {
       200: {
         type: 'object',
@@ -24,10 +28,10 @@ server.get('/', {
 })
 
 server.post('/sum', {
-  schema: {
-    description: 'post some data',
+  schema: <fastify.RouteSchema>{
+    description: 'Post a and b arguments, respond with the sum.',
     tags: ['user', 'code'],
-    summary: 'qwerty',
+    summary: 'Test Post Arguments Swagger',
     params: {},
     body: {
       type: 'object',
