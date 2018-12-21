@@ -8,7 +8,8 @@
     "dev": "npx ts-node-dev --respawn src/app.ts",
     "lint": "npx tslint --project ./ 'src/**/*.ts?(x)' $@",
     "pretty": "npx prettier --write 'src/**/*.ts'",
-    "precommit": "npm run pretty --silent && npm run lint --silent --fix && npm test --silent"
+    "precommit": "npm run pretty --silent && npm run lint --silent --fix && npm test --silent",
+    "tslint-check": "tslint-config-prettier-check ./tslint.json"
   },
   "author": "",
   "license": "ISC",
@@ -27,6 +28,7 @@
     "ts-jest": "^23.10.5",
     "ts-node-dev": "^1.0.0-pre.32",
     "tslint": "^5.12.0",
+    "tslint-config-prettier": "^1.17.0",
     "typescript": "^3.2.2"
   }
 }

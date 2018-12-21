@@ -1,8 +1,11 @@
 {
     "extends": [
-        "tslint:recommended"
+        "tslint:recommended",
+		"tslint-config-prettier"
     ],
     "jsRules": {},
-    "rules": {},
+    "rules": {
+		"object-literal-sort-keys": false
+	},
     "rulesDirectory": []
 }
