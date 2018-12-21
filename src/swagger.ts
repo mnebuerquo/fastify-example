@@ -1,8 +1,9 @@
 import * as fastify_swagger from 'fastify-swagger'
 
+/* tslint:disable-next-line:no-var-requires */
 const pkg = require('../package.json')
 
-const addSwag = (fastify) => {
+const addSwag = fastify => {
   fastify.register(fastify_swagger, {
     routePrefix: '/swagger',
     exposeRoute: true,
@@ -14,7 +15,7 @@ const addSwag = (fastify) => {
       },
       externalDocs: {
         url: 'https://swagger.io',
-        description: 'Find more info here'
+        description: 'Find more info here',
       },
       host: 'localhost:8080',
       schemes: ['http'],
@@ -22,16 +23,16 @@ const addSwag = (fastify) => {
       produces: ['application/json'],
       tags: [
         { name: 'user', description: 'User related end-points' },
-        { name: 'code', description: 'Code related end-points' }
+        { name: 'code', description: 'Code related end-points' },
       ],
       securityDefinitions: {
         apiKey: {
           type: 'apiKey',
           name: 'apiKey',
-          in: 'header'
-        }
-      }
-    }
+          in: 'header',
+        },
+      },
+    },
   })
 }
 
