@@ -14,6 +14,13 @@ of the actual tools.
 ./npx tslint
 ```
 
+*TODO*: The `./node` script in this project defaults to calling `docker run` with
+a mapped port. If you want to run tests and dev at the same time, this will
+fail because it can not bind the same port again. This would be better served
+with docker-compose, so the `./node` script would not need to bind the port.
+Running dev and test:watch would be done with docker-compose which would handle
+ports for you.
+
 # API Framework (Fastify)
 
 [See framework documentation.](https://www.fastify.io/)
