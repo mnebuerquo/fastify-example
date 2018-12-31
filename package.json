@@ -5,11 +5,15 @@
   "main": "index.js",
   "scripts": {
     "test": "jest",
+	"test:watch": "jest --watchAll",
     "dev": "npx ts-node-dev --respawn src/app.ts",
     "lint": "npx tslint --project ./ 'src/**/*.ts?(x)' $@",
     "pretty": "npx prettier --write 'src/**/*.ts'",
-    "precommit": "npm i && npm run pretty --silent && npm run lint --silent --fix && npm test --silent",
-    "tslint-check": "tslint-config-prettier-check ./tslint.json"
+    "pretty:check": "npx prettier --list-different 'src/**/*.ts'",
+    "precommit": "npm run -s pretty:check && npm run -s lint && npm run test -s",
+    "from-scratch": "rm -rf node_modules && npm i && npm run precommit",
+    "tslint-check": "tslint-config-prettier-check ./tslint.json",
+    "postinstall": "cp ./githooks/* ./.git/hooks/"
   },
   "author": "",
   "license": "ISC",

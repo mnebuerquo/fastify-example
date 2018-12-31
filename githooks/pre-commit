@@ -1,5 +1,8 @@
 #!/bin/sh
 
+# This is duplicating some code from the node script because we can't use the
+# -it flags because the input device is not a tty when called by git commit.
+
 REGISTRY="${DOCKER_LOCAL_REGISTRY}"
 IMAGE="node:10"
 FULL="${REGISTRY}${IMAGE}"
@@ -7,9 +10,7 @@ FULL="${REGISTRY}${IMAGE}"
 WORKDIR="/app"
 docker run \
 	--user "node" \
-	-it \
-	-p "8080:8080" \
 	--rm \
 	-w "${WORKDIR}" \
 	-v "$(pwd):${WORKDIR}" \
-	"${FULL}" "$@"
+	"${FULL}" npm run precommit -s

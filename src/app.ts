@@ -15,7 +15,7 @@ server.register(helmet, { hidePoweredBy: { setTo: 'your mom' } })
 server.register(routes, {})
 
 // Run the server!
-server.listen(80, '0.0.0.0', (err, address) => {
+server.listen(8080, '0.0.0.0', (err, address) => {
   if (err) {
     server.log.error(err)
     process.exit(1)
