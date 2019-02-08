@@ -8,6 +8,7 @@
 	"test:watch": "jest --watchAll",
     "dev": "npx ts-node-dev --respawn src/app.ts",
     "lint": "npx tslint --project ./ 'src/**/*.ts?(x)' $@",
+    "lint:fix": "npx tslint --project ./ 'src/**/*.ts?(x)' --fix",
     "pretty": "npx prettier --write 'src/**/*.ts'",
     "pretty:check": "npx prettier --list-different 'src/**/*.ts'",
     "precommit": "npm run -s pretty:check && npm run -s lint && npm run test -s",
