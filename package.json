@@ -5,13 +5,13 @@
   "main": "index.js",
   "scripts": {
     "test": "jest",
-	"test:watch": "jest --watchAll",
+    "test:watch": "jest --watchAll",
     "dev": "npx ts-node-dev --respawn src/app.ts",
     "lint": "npx tslint --project ./ 'src/**/*.ts?(x)' $@",
     "lint:fix": "npx tslint --project ./ 'src/**/*.ts?(x)' --fix",
     "pretty": "npx prettier --write 'src/**/*.ts'",
     "pretty:check": "npx prettier --list-different 'src/**/*.ts'",
-    "precommit": "npm run -s pretty:check && npm run -s lint && npm run test -s",
+    "precommit": "npm run -s pretty:check && npm run -s lint",
     "from-scratch": "rm -rf node_modules && npm i && npm run precommit",
     "tslint-check": "tslint-config-prettier-check ./tslint.json",
     "postinstall": "cp ./githooks/* ./.git/hooks/"
@@ -21,20 +21,20 @@
   "dependencies": {
     "cors": "^2.8.5",
     "dotenv": "^6.2.0",
-    "fastify": "^1.13.2",
+    "fastify": "^1.14.5",
     "fastify-helmet": "^3.0.0",
     "fastify-swagger": "^0.16.2",
     "ts-node": "^7.0.1"
   },
   "devDependencies": {
-    "@types/jest": "^23.3.10",
-    "@types/node": "^10.12.15",
-    "jest": "^23.6.0",
-    "prettier": "^1.15.3",
-    "ts-jest": "^23.10.5",
+    "@types/jest": "^23.3.14",
+    "@types/node": "^10.14.4",
+    "jest": "^24.7.1",
+    "prettier": "^1.17.0",
+    "ts-jest": "^24.0.0",
     "ts-node-dev": "^1.0.0-pre.32",
-    "tslint": "^5.12.0",
-    "tslint-config-prettier": "^1.17.0",
-    "typescript": "^3.2.2"
+    "tslint": "^5.15.0",
+    "tslint-config-prettier": "^1.18.0",
+    "typescript": "^3.4.3"
   }
 }
