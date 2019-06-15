@@ -10,7 +10,7 @@
     "lint": "npx tslint --project ./ 'src/**/*.ts?(x)' $@",
     "lint:fix": "npx tslint --project ./ 'src/**/*.ts?(x)' --fix",
     "pretty": "npx prettier --write 'src/**/*.ts'",
-    "pretty:check": "npx prettier --list-different 'src/**/*.ts'",
+    "pretty:check": "npx prettier --list-different 'src/**/*.ts' || echo \"Code formatting problem. Please run ./npm run pretty !!!\"",
     "precommit": "npm run -s pretty:check && npm run -s lint",
     "from-scratch": "rm -rf node_modules && npm i && npm run precommit",
     "tslint-check": "tslint-config-prettier-check ./tslint.json",

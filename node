@@ -4,11 +4,17 @@ REGISTRY="${DOCKER_LOCAL_REGISTRY}"
 IMAGE="node:10"
 FULL="${REGISTRY}${IMAGE}"
 
+if [ -z "${PORT}" ] ; then
+	PORTSTR=
+else
+	PORTSTR="-p ${PORT}:8080"
+fi
+
 WORKDIR="/app"
 docker run \
 	--user "node" \
 	-it \
-	-p "8080:8080" \
+	${PORTSTR} \
 	--rm \
 	-w "${WORKDIR}" \
 	-v "$(pwd):${WORKDIR}" \
