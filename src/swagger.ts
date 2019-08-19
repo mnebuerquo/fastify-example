@@ -1,10 +1,10 @@
-import * as fastify_swagger from 'fastify-swagger'
+import * as oas from 'fastify-oas'
 
 /* tslint:disable-next-line:no-var-requires */
 const pkg = require('../package.json')
 
 const addSwag = fastify => {
-  fastify.register(fastify_swagger, {
+  fastify.register(oas, {
     routePrefix: '/swagger',
     exposeRoute: true,
     swagger: {
