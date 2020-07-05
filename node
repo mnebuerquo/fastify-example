@@ -1,8 +1,10 @@
 #!/bin/sh
 
 REGISTRY="${DOCKER_LOCAL_REGISTRY}"
-IMAGE="node:10"
+IMAGE="node:12"
 FULL="${REGISTRY}${IMAGE}"
+
+docker image inspect "${FULL}" > /dev/null 2>&1 || docker pull "${FULL}"
 
 if [ -z "${PORT}" ] ; then
 	PORTSTR=

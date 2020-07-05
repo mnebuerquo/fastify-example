@@ -21,22 +21,22 @@
   "dependencies": {
     "cors": "^2.8.5",
     "dotenv": "^6.2.0",
-    "fastify": "^2.0.0",
-    "fastify-favicon": "^2.0.0",
-    "fastify-helmet": "^3.0.0",
-    "fastify-oas": "^2.3.1",
-    "fastify-swagger": "^2.0.0",
+    "fastify": "^2.15.1",
+    "fastify-favicon": "^2.1.0",
+    "fastify-helmet": "^3.0.2",
+    "fastify-oas": "^2.7.0",
+    "fastify-swagger": "^2.6.0",
     "ts-node": "^7.0.1"
   },
   "devDependencies": {
     "@types/jest": "^23.3.14",
-    "@types/node": "^10.14.7",
-    "jest": "^24.8.0",
-    "prettier": "^1.17.1",
-    "ts-jest": "^24.0.0",
-    "ts-node-dev": "^1.0.0-pre.39",
-    "tslint": "^5.16.0",
+    "@types/node": "^10.17.26",
+    "jest": "^24.9.0",
+    "prettier": "^1.19.1",
+    "ts-jest": "^24.3.0",
+    "ts-node-dev": "^1.0.0-pre.50",
+    "tslint": "^5.20.1",
     "tslint-config-prettier": "^1.18.0",
-    "typescript": "^3.4.5"
+    "typescript": "^3.9.6"
   }
 }
