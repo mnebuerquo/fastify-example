@@ -12,7 +12,7 @@ const server = fastify({
 addSwagger(server)
 
 server.register(helmet, { hidePoweredBy: { setTo: 'your mom' } })
-server.register(favicon)
+server.register(favicon as any)
 server.register(routes, {})
 
 const fatal = err => {
